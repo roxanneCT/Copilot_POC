@@ -1,0 +1,27 @@
+<form>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Enter a task you want to complete:</mat-label>
+        <input 
+            type="text"
+            placeholder="Pick one or type your own"
+            aria-label="Number"
+            matInput
+            [formControl]="myControl"
+            [matAutocomplete]="auto">
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option}}
+        </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+</form>
+
+<button 
+    mat-raised-button 
+    color="primary"
+    (click)="generateMacroFlow()"
+    [disabled]="isDisabled()"
+>
+    Generate Macros
+</button>
+  

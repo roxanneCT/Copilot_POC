@@ -1,0 +1,24 @@
+<div class="flow-container">
+    <div *ngIf="macroFlow.length==0">
+        Macros will be displayed here after you click the generate button
+    </div>
+
+    <div *ngIf="macroFlow.length>0" class="flow-content">
+        <ng-container *ngFor="let data of macroFlow; index as i;">
+            <app-macro-card
+                [macroData]="data"
+            ></app-macro-card>
+            <mat-icon *ngIf="showArrow(i)">arrow_downward</mat-icon>
+        </ng-container>
+        
+    </div>
+</div>
+
+<button 
+    *ngIf="macroFlow.length>0"
+    mat-raised-button 
+    color="primary"
+    (click)="saveMacroFlow()"
+>
+    Save Macro Flow
+</button>

@@ -1,0 +1,19 @@
+<mat-expansion-panel 
+    (opened)="panelOpenState = true" 
+    (closed)="panelOpenState = false"
+    >
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            <mat-icon>{{macroData.icon}}</mat-icon>
+            <div class="title">{{macroData.title}}</div>
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p class="description" *ngIf="macroData.description">{{macroData.description}}</p>
+
+    <ng-container *ngIf="macroData.dynamicData">
+        <div class="form-element" *ngFor="let item of macroData.dynamicData | keyvalue: unsorted">
+            <label for="{{item.key}}">{{item.key}}: </label>
+            <input type="text" value="{{item.value}}">
+        </div>
+    </ng-container>
+</mat-expansion-panel>

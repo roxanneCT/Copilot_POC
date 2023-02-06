@@ -1,0 +1,17 @@
+<div class="top-bar">
+  <div id="d-365">Dynamics 365</div>
+  <mat-divider [vertical]="true"></mat-divider>
+  <div id="page-title">NL2Macro</div>
+</div>
+
+<div class="container" fxLayout="row">
+  <app-input-bar 
+    fxFlex="50"
+    (generateButtonClicked)="generateFlow($event)"
+  ></app-input-bar>
+
+  <app-macro-flow 
+    fxFlex="50"
+    [macroFlow]="macroFlow"
+  ></app-macro-flow>
+</div>

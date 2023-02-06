@@ -1,0 +1,27 @@
+.top-bar {
+    background-color: #001433;
+}
+
+.container {
+    height: calc(100vh - 120px - 60px);
+}
+
+#d-365 {
+    display: inline-block;
+    font-size: 18px;
+    color: white;
+    font-weight: 600;
+    padding: 20px 25px 20px 80px;
+}
+
+#page-title {
+    display: inline-block;
+    font-size: 16px;
+    color: white;
+    padding: 20px 25px;
+}
+
+.mat-divider-vertical {
+    border-right-color: grey;
+    display: inline;
+}
